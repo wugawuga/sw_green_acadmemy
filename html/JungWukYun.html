@@ -48,25 +48,29 @@
     <!-- 4번 문제 -->
     <fieldset>
         <legend>카드 정보 입력</legend>
-        <label>1. </label>
-        <fieldset>
-            <legend>카드 타입</legend>
-            <label>1. </label>
-            <input type="radio">VISA</input><br>
-            <label>2. </label>
-            <input type="radio">AmEx</input><br>
-            <label>3. </label>
-            <input type="radio">MasterCard</input><br>
-        </fieldset>
-        <label>2. 카드 번호</label>
-        <input type="number" value="0"><br>
-        <label>3. CRC 번호</label>
-        <input type="number" value="1"><br>
-        <label>4. 카드 소유자 이름</label>
-        <input type="text">
-    </fieldset>
-    <fieldset>
-        <input type="button" value="구매">
+        <ol>
+            <li>
+                <fieldset>
+                    <legend>카드 타입</legend>
+                    <label>1. </label>
+                    <input type="radio" name="card">VISA</input><br>
+                    <label>2. </label>
+                    <input type="radio" name="card">AmEx</input><br>
+                    <label>3. </label>
+                    <input type="radio" name="card">MasterCard</input><br>
+                </fieldset>
+            </li> 
+            <li>
+                카드 번호<input type="number" value="0"><br>
+            </li>
+            <li>
+                CRC 번호<input type="number" value="1"><br>
+            </li>
+            <li>
+                카드 소유자 이름<input type="text">
+            </li>
+        </ol>
+       
     </fieldset>
 
     <!-- 5번 문제 -->
@@ -77,8 +81,8 @@
     <input type="text"><br>
     <label>email:</label>
     <input type="email"><br>
-    <input type="radio" value="남" checked>Male<br>
-    <input type="radio" value="여">Female<br>
+    <input type="radio" name="gen" value="남" checked>Male<br>
+    <input type="radio" name="gen" value="여">Female<br>
     <input type="button" value="Send">
     <input type="button" value="초기화"><br>
 
@@ -106,8 +110,8 @@
         <input type="email" placeholder="이메일 주소를 입력하세요" required><br>
         <label>전화번호</label>
         <input type="tel" placeholder="전화번호를 입력하세요" required><br>
-        남성<input type="radio" checked>
-        여성<input type="radio"><br>
+        남성<input name="gen" type="radio" checked>
+        여성<input name="gen" type="radio"><br>
     </fieldset>
     <fieldset>
         <legend>기타 정보</legend>
@@ -162,7 +166,7 @@
             <td>나이</td>
             <td><input type="number" min="15" max="120"></td>
             <td>성별</td>
-            <td><input type="radio" checked>남<input type="radio">여</td>
+            <td><input type="radio" name="gen" checked>남<input name="gen" type="radio">여</td>
         </tr>
         <tr>
             <td rowspan="2">취미</td>
