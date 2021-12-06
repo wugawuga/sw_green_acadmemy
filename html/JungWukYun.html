@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>윤정욱</title>
+</head>
+<body>
+    <!-- 1번 문제 -->
+    <h1>HTML5 요소 데모 화면</h1>
+    <label>이름 : </label>
+    <input type="text"><br>
+    <label>이메일 : </label>
+    <input type="email"><br>
+    <label>웹사이트 : </label>
+    <input type="text"><br>
+    <label>정수 : </label>
+    <input type="number"><br>
+    <label>범위 : </label>
+    <input type="range" min="0" max="100"><br>
+    <label>메시지 : </label>
+    <textarea></textarea><br>
+    <input type="button" value="Submit"><br>
+
+    <!-- 2번 문제 -->
+    <fieldset>
+        <legend>신상정보</legend>
+        <label>1. 이름 : </label>
+        <input type="text" placeholder="이름"><br>
+        <label>2. 이메일 : </label>
+        <input type="email" placeholder="example@domain.com"><br>
+        <label>3. 휴대폰 번호 : </label>
+        <input type="text" placeholder="01012345678"><br>
+    </fieldset>
+
+    <!-- 3번 문제 -->
+    <fieldset>
+        <legend>배송지 주소</legend>
+        <label">1. 주소</label>
+        <textarea name="" id="" cols="30" rows="10"></textarea><br>
+        <label">2. 우편번호</label>
+            <input type="text"><br>
+        <label">3. 국가</label>
+            <input type="text">
+    </fieldset>
+
+    <!-- 4번 문제 -->
+    <fieldset>
+        <legend>카드 정보 입력</legend>
+        <label>1. </label>
+        <fieldset>
+            <legend>카드 타입</legend>
+            <label>1. </label>
+            <input type="radio">VISA</input><br>
+            <label>2. </label>
+            <input type="radio">AmEx</input><br>
+            <label>3. </label>
+            <input type="radio">MasterCard</input><br>
+        </fieldset>
+        <label>2. 카드 번호</label>
+        <input type="number" value="0"><br>
+        <label>3. CRC 번호</label>
+        <input type="number" value="1"><br>
+        <label>4. 카드 소유자 이름</label>
+        <input type="text">
+    </fieldset>
+    <fieldset>
+        <input type="button" value="구매">
+    </fieldset>
+
+    <!-- 5번 문제 -->
+    <h1>회원 가입 화면</h1>
+    <label>이름:</label>
+    <input type="text"><br>
+    <label>주소:</label>
+    <input type="text"><br>
+    <label>email:</label>
+    <input type="email"><br>
+    <input type="radio" value="남" checked>Male<br>
+    <input type="radio" value="여">Female<br>
+    <input type="button" value="Send">
+    <input type="button" value="초기화"><br>
+
+    <!-- 6번 문제 -->
+    <h1>이메일 전송화면</h1>
+    <label>이름:</label>
+    <input type="text"><br>
+    <label>이메일 주소:</label>
+    <input type="email"><br>
+    <label>내용:</label><br>
+    <textarea name="" id="" cols="30" rows="10"></textarea><br>
+    <input type="button" value="Send">
+    <input type="button" value="Reset">
+
+    <!-- 7번 문제 -->
+    <fieldset>
+        <legend>기본 정보</legend>
+        <label>ID</label>
+        <input type="text" placeholder="아이디를 입력하세요" required><br>
+        <label>비밀번호</label>
+        <input type="password" placeholder="비밀번호를 입력하세요" required minlength="5" maxlength="15"><br>
+        <label>비밀번호 확인</label>
+        <input type="password" placeholder="다시 비밀번호를 입력하세요" required><br>
+        <label>이메일</label>
+        <input type="email" placeholder="이메일 주소를 입력하세요" required><br>
+        <label>전화번호</label>
+        <input type="tel" placeholder="전화번호를 입력하세요" required><br>
+        남성<input type="radio" checked>
+        여성<input type="radio"><br>
+    </fieldset>
+    <fieldset>
+        <legend>기타 정보</legend>
+        <label>나이</label>
+        <input type="number" min="1" max="120"><br>
+        <label>취미</label><br>
+        <input type="checkbox" checked>탁구
+        <input type="checkbox">농구
+        <input type="checkbox">축구<br>
+        <input type="checkbox">독서
+        <input type="checkbox">뜨게질
+        <input type="checkbox">십자수<br>
+        <label>직업</label>
+        <select name="직업">
+            <option value="1">개발자</option>
+            <option value="2">교사</option>
+            <option value="3">가수</option>
+        </select>
+    </fieldset>
+    <fieldset>
+        <legend>자기 소개</legend>
+        <textarea cols="30" rows="5"></textarea>
+    </fieldset>
+    <input type="button" value="회원 가입">
+    <input type="button" value="다시 작성">
+
+    <!-- 8번 문제 -->
+    <table border="1">
+        <th colspan="4">기본 정보</th>
+        <tr>
+            <td>ID</td>
+            <td><input type="text" placeholder="아이디를 입력하세요"></td>
+            <td>비밀번호</td>
+            <td><input type="password" placeholder="비밀번호를 입력하세요"></td>
+        </tr>
+        <tr>
+            <td>이름</td>
+            <td><input type="text" placeholder="이름을 입력하세요"></td>
+            <td>확인 비밀번호</td>
+            <td><input type="password" placeholder="다시 비밀번호를 입력하세요"></td>
+        </tr>
+        <tr>
+            <td>이메일</td>
+            <td><input type="email" placeholder="이메일을 입력하세요"></td>
+            <td>전화번호</td>
+            <td><input type="tel" placeholder="전화번호를 입력하세요"></td>
+        </tr>
+        <tr>
+            <th colspan="4">기타정보</th>
+        </tr>
+        <tr>
+            <td>나이</td>
+            <td><input type="number" min="15" max="120"></td>
+            <td>성별</td>
+            <td><input type="radio" checked>남<input type="radio">여</td>
+        </tr>
+        <tr>
+            <td rowspan="2">취미</td>
+            <td colspan="3"><input type="checkbox" checked>탁구<input type="checkbox">농구<input type="checkbox">축구</td>
+        </tr>
+        <tr>
+            <td colspan="3"><input type="checkbox">독서<input type="checkbox">뜨게질<input type="checkbox">십자수</td>
+        </tr>
+        <tr>
+            <td colspan="4">직업
+                <select name="직업">
+                    <option value="1">개발자</option>
+                    <option value="2">교사</option>
+                    <option value="3">가수</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="4"><textarea placeholder="" cols="53" rows="10"></textarea></td>
+        </tr>
+        <tr>
+            <td colspan="2"><input type="button" value="회원 가입"></td>
+            <td colspan="2"><input type="button" value="다시 작성"></td>
+        </tr>
+    </table>
+</body>
+</html>
