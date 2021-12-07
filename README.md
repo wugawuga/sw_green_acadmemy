@@ -7,3 +7,5 @@
   * sql 강의자료 추가
 * 21-12-06
   * html 연습 과제
+* 21-12-07
+  * netflix clone 연습, css 연습
