@@ -9,3 +9,7 @@
   * html 연습 과제
 * 21-12-07
   * netflix clone 연습, css 연습
+* 21-12-08
+  * css 연습
+  * position
+  * flex
