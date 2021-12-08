@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            box-sizing: border-box;
+        }
+        #parent{
+            width: 300px;
+            height: 300px;
+            margin: 200px auto;
+            background-color: grey;
+            position: relative;
+        }
+        .box1{
+            width: 150px;
+            height: 150px;
+            background-color: red;
+            top: -75px;
+            left: -75px;
+            position: relative;
+            float: left;
+        }
+        .box2{
+            width: 150px;
+            height: 150px;
+            background-color: yellow;
+            top: -75px;
+            right: -75px;
+            float: left;
+            position: relative;
+        }
+        .box3{
+            width: 150px;
+            height: 150px;
+            background-color: green;
+            bottom: -75px;
+            left: -75px;
+            float: left;
+            position: relative;
+        }
+        .box4{
+            width: 150px;
+            height: 150px;
+            background-color: purple;
+            bottom: -75px;
+            right: -75px;
+            float: left;
+            position: relative;
+        }
+    </style>
+</head>
+<body>
+    <div id="parent">
+        <div class="box1"></div>
+        <div class="box2"></div>
+        <div class="box3"></div>
+        <div class="box4"></div>
+    </div>
+</body>
+</html>

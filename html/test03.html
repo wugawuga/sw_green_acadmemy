@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            box-sizing: border-box;
+        }
+        #parent{
+            height: 400px;
+            width: 700px;
+            margin: 100px auto;
+        }
+        .title{
+            background-color: white;
+            width: 700px;
+            height: 30px;
+            display: flex;
+        }
+        .title a{
+            font-size: 13px;
+            background-color: white;
+            height: 30px;
+            width: 233px;
+        }
+        .content{
+            width: 700px;
+            height: 340px;
+            display: flex;
+            /* main axis */
+            justify-content: space-between;
+        }
+        .ctt{
+            width: 232px;
+            height: 340px;
+            background-color: tomato;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .ctt img{
+            float: left;
+            width: 100px;
+            height: 100px;
+        }
+        .box{
+            height: 100px;
+        }
+        .box p{
+            font-size: 13px;
+            display: inline;
+        }
+    </style>
+</head>
+<body>
+    <div id="parent">
+        <div class="title">
+            <p>베스트도전&도전<span style="color: green;">추천웹툰</span></p>
+        </div>
+        <hr>
+        <div class="title">
+            <a>에피소드</a>
+            <a>옴니버스</a>
+            <a>스토리</a>
+        </div>
+        <div class="content">
+            <div class="ctt">
+                <div class="box">
+                    <img src="https://shared-comic.pstatic.net/thumb/nas/user_contents_data/challenge_comic/2020/01/30/315166/thumbnail_83x9040e09ac8_2018_49df_a254_f6bf649dd4b0_00002460.JPEG">
+                    <p>홈 스윗 홈</p>
+                </div>
+                <div class="box">
+                    <img src="https://shared-comic.pstatic.net/thumb/nas/user_contents_data/challenge_comic/2011/06/14/123316/thumbnail_title_msguri_110721_.jpg">
+                    <p>너구리네 육아일기</p>
+                </div>
+                <div class="box">
+                    <img src="https://shared-comic.pstatic.net/thumb/nas/user_contents_data/challenge_comic/2021/06/19/119391/thumbnail_83x90fdff1aa6_bae0_4ed8_95cc_7a600bb83dbd_00000343.JPEG">
+                    <p>가족입니다.</p>
+                </div>
+            </div>
+            <div class="ctt">
+                <div class="box">
+                    <img src="https://shared-comic.pstatic.net/thumb/nas/user_contents_data/challenge_comic/2021/09/16/328744/thumbnail_83x90ef8053dd_50cb_4cf0_abde_e90c58be2769_00001580.JPEG">
+                    <p>신혼좀비</p>
+                </div>
+                <div class="box">
+                    <img src="https://shared-comic.pstatic.net/thumb/nas/user_contents_data/challenge_comic/2021/06/23/347334/thumbnail_83x901dd9f90a_a73f_4328_8aaf_d3c45688936a_00001487.JPEG">
+                    <p>기후위기인간</p>
+                </div>
+                <div class="box">
+                    <img src="https://shared-comic.pstatic.net/thumb/nas/user_contents_data/challenge_comic/2021/11/03/351017/thumbnail_83x903c94f664_a84e_4346_8652_020e9786f739_00003051.JPEG">
+                    <p>오늘의 난</p>
+                </div>
+            </div>
+            <div class="ctt">
+                <div class="box">
+                    <img src="https://shared-comic.pstatic.net/thumb/nas/user_contents_data/challenge_comic/2021/10/10/350352/thumbnail_83x903d20dfcb_1b73_4ed0_a794_bad9b9392f06_00000636.JPEG">
+                    <p>보이지 않는 선</p>
+                </div>
+                <div class="box">
+                    <img src="https://shared-comic.pstatic.net/thumb/nas/user_contents_data/challenge_comic/2020/12/22/333222/thumbnail_83x90a5a0baad_1447_4e8d_85d6_0a80152c6805_00002922.JPEG">
+                    <p>시간과 사연</p>
+                </div>
+                <div class="box">
+                    <img src="https://shared-comic.pstatic.net/thumb/nas/user_contents_data/challenge_comic/2021/09/28/301644/thumbnail_83x90ac37ed35_c84b_4edb_9635_8cf73b2535e6_00004800.JPEG">
+                    <p>마법사 엘다의 모험</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
