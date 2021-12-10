@@ -55,16 +55,12 @@ public class Ques01 {
 	}
 
 	private static void inputScore() { // 성적입력
-		for(int i = 0; i < scores.length; i++) {
-			for(int j = 0; j < scores[i].length; j++) {
-				System.out.print("이름을 입력하세요. : ");
-				names[i] = scan.nextLine();
+		for(int i = 0; i < names.length; i++) {
+			System.out.print("이름을 입력하세요. : ");
+			names[i] = scan.nextLine();
+			for(int j = 0; j < 3; j++) {
 				System.out.println("성적을 입력하세요.");
-				System.out.print("국어 : ");
-				scores[i][j] = Integer.parseInt(scan.nextLine());
-				System.out.print("수학 : ");
-				scores[i][j] = Integer.parseInt(scan.nextLine());
-				System.out.print("영어 : ");
+				System.out.print("국어, 영어, 수학 : ");
 				scores[i][j] = Integer.parseInt(scan.nextLine());
 			}
 		}
