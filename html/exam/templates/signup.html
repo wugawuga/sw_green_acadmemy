@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>가입가입</title>
+    <link rel="stylesheet" href="../static/signup.css">
+    <script>
+        function main(){
+            location.href='../main.html';
+        }
+    </script>
+</head>
+<body>
+    <h1>윤정욱의 홈페이지입니다.</h1>
+    <form action="#" method="get" enctype="multipart/form-data">
+        <fieldset class="fiel sec1">
+            <legend>필수 입력사항</legend>
+            <label>아이디 :
+                <input type="text" name="userid" placeholder="아이디를 입력하세요" required="required"></label><br>
+            <label>비밀번호 :
+                <input type="password" name="userpassword" required="required"></label><br>
+            <label>비밀번호 확인 :
+                <input type="password" name="userpassword" required="required"></label><br>
+            <label>이름 :
+                <input type="text" name="username" maxlength="5" required="required"></label><br>
+            <label>이메일 :
+                <input type="email" name="useremail" required="required"></label><br>
+            <label>전화번호 :
+                <input type="tel" name="usertel" required="required"></label>
+            <input type="submit">
+        </fieldset>
+        <fieldset class="fiel sec2">
+            <legend>추가입력사항</legend>
+            <label>나이 : </label>
+            <label>성별 : <input type="radio" name="성별">남</label>
+            <label><input type="radio" name="성별" checked="checked">여</label><br>
+            <label>취미 : 
+                <input type="checkbox" name="hobby" value="dang">당구
+                <input type="checkbox" name="hobby" value="gam">게임
+                <input type="checkbox" name="hobby" value="dok">독서
+                <input type="checkbox" name="hobby" value="co">코딩
+                <input type="checkbox" name="hobby" value="umm">음악감상
+                <input type="checkbox" name="hobby" value="young">영화보기
+            </label><br>
+            <label>직업 : 
+                <input type="checkbox" name="job" value="gae">개발자
+                <input type="checkbox" name="job" value="gyo">교사
+                <input type="checkbox" name="job" value="gyoung">경찰
+                <input type="checkbox" name="job" value="yo">요리사
+                <input type="checkbox" name="job" value="ga">가수
+            </label><br>
+            <label>자기소개 : <textarea name="feedback" cols="30" rows="10">반갑습니다. 윤정욱입니다.</textarea></label>
+        </fieldset>
+        
+        <input type="submit" value="확인" class="bttn" onclick="main()">
+        <input type="reset" value="다시 쓰기" class="bttn">
+    </form>
+    <footer>
+        <p>문서명 : 화면 구현 포트폴리오</p>
+        <p>작성일 : 2021-12-09</p>
+        <p>저작권 : copyright@2021 윤정욱</p>
+    </footer>
+</body>
+</html>

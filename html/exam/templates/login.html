@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>로깅로깅</title>
+    <script>
+        function signup(){
+            location.href='signup.html';
+        }
+        function home(){
+            location.href='../main.html';
+        }
+    </script>
+    <link rel="stylesheet" href="../static/login.css">
+</head>
+<body>
+    <h1>윤정욱의 홈페이지입니다.</h1>
+    <form action="post">
+        <fieldset>
+            <legend>로깅</legend>
+            <label>아이디 : <input type="text" value=""></label><br>
+            <label>비밀번호 : <input type="password" value=""></label><br>
+            <input type="button" value="확인" onclick="home()">
+            <input type="reset" value="취소">
+            <input type="button" value="회원가입" onclick="signup()">
+        </fieldset>
+    </form>
+    <footer>
+        <p>문서명 : 화면 구현 포트폴리오</p>
+        <p>작성일 : 2021-12-09</p>
+        <p>저작권 : copyright@2021 윤정욱</p>
+    </footer>
+</body>
+</html>

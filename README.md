@@ -13,3 +13,6 @@
   * css 연습
   * position
   * flex
+* 21-12-09
+  * html 학원 과제
+  * flex, table, semantic tag
