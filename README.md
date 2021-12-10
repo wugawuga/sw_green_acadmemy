@@ -16,3 +16,6 @@
 * 21-12-09
   * html 학원 과제
   * flex, table, semantic tag
+* 21-12-10
+  * java 연습 문제
+  * java 보강

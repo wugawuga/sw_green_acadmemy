@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function method1(){
+            alert('우가우가');
+            location.href='temp02.html';
+        }
+    </script>
+</head>
+<body>
+    <form action="temp02.html" method="post">
+        <label>이름 : <input type="text" name="name" value="안녕하세요"></label><br>
+        <input type="submit" value="전송">
+        <input type="reset" value="다시입력">
+        <input type="button" value="확인" onclick="method1()">
+        <button type="submit">전송</button>
+    </form>
+</body>
+</html>
