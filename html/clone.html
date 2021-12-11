@@ -1,112 +1,435 @@
 <!DOCTYPE html>
 <html lang="ko">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>html 연습 clone</title>
-        <style>
-            *{
-                margin: 0;
-                box-sizing: border-box;
-            }
-            body{
-                font-family:'-apple-system', 'BlinkMacSystemFont', 'Apple SD Gothic Neo','Inter', 'Spoqa Han Sans', 'Segoe UI', Sans-Serif,'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
-                font-size: 14px;
-            }
-            .head{
-                width: 1920px;
-                height: 72px;
-                background-color:rgb(36, 41, 47);
-            }
-            .headcenter{
-                width: 100%;
-                height: 72px;
-                margin: 0 auto;
-            }
-            .headcenter img{
-                padding: 16px 0;
-                width: 45px;
-            }
-            .headleft{
-                margin-left: 20px;
-                width: 1000px;
-                height: 72px;
-                display: flex;
-                flex-direction: row;
-                float: left;
-            }
-            .headmu{
-                color: white;
-                margin: 7px 20px 0 0;
-                padding: 16px 0;
-                font-size: 16px;
-            }
-            .headright{
-                width: 800px;
-                height: 72px;
-                display: flex;
-                color: white;
-                font-size: 16px;
-            }
-            .headmulf{
-                color: white;
-                padding: 16px 0;
-                font-size: 16px;
-                margin-right: 20px;
-            }
-            .headright input{
-                width: 250px;
-                height: 40px;
-                background: transparent;
-                border: 0.5px solid rgb(117, 117, 117);
-                border-radius: 10px;
-                padding: 8px 12px;
-            }
-            .righttxt{
-                margin: 7px 20px 0 0;
-            }
-            .rightbtn{
-                border-radius: 3px;
-                padding-left: 5px;
-                padding-right: 5px;
-                margin-bottom: 17px;
-            }
-            .content{
-                height: 1022px;
-                left: 0;
-                right: 0;
-            }
-            .foot{
-                background-color: grey;
-                height: 114px;
-                left: 0;
-                right: 0;
-            }
-        </style>
-    </head>
-    <body>
-        <div class="head">
-            <div class="headcenter">
-                <div class="headleft">
-                    <img src="github.png">
-                    <div class="headmu box">Why GitHub? </div>
-                    <div class="headmu box">Team</div>
-                    <div class="headmu box">Enterprise</div>
-                    <div class="headmu box">Explore</div>
-                    <div class="headmu box">Marketplace</div>
-                    <div class="headmu box">Pricing</div>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>html 연습 clone</title>
+    <style>
+        *{
+            margin: 0;
+            box-sizing: border-box;
+        }
+        body{
+            line-height: 1.5;
+            font-family:'-apple-system', 'BlinkMacSystemFont', 'Apple SD Gothic Neo','Inter', 'Spoqa Han Sans', 'Segoe UI', Sans-Serif,'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+            font-size: 14px;
+        }
+        header{
+            position: relative;
+            padding: 12px 0 12px 0;
+            width: 100%;
+            height: 72px;
+            background-color:rgb(36, 41, 47);
+            display: flex;
+        }
+        #headstart{
+            margin: 0 auto;
+            display: flex;
+        }
+        .headinner{
+            margin: 0 auto;
+            width: 1280px;
+            font-size: 16px;
+            display: flex;
+            flex-direction: row;
+            color: white;
+            align-items: center;
+            padding-right: 16px;
+            padding-left: 16px;
+        }
+        .headsvg{
+            margin-right: 24px;
+        }
+        .headinner ul{
+            padding-right: 0;
+            padding-left: 0;
+            display: flex;
+            flex-direction: row;
+            list-style: none;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .headinner ul li{
+            margin-right: 16px;
+        }
+        .headcontent{
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+        .contentleft{
+            display: flex;
+            align-content: center;
+        }
+        .contentright{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .contentinput{
+            width: 255px;
+            height: 36px;
+            padding: 5px 12px;
+            margin-right: 16px;
+        }
+        .signup-a{
+            padding: 5px 12px;
+            border: 1px solid white;
+            border-radius: 5px;
+            margin-left: 16px;
+        }
+        section{
+            width: 100%;
+            height: 1065px;
+        }
+        .fixbar{
+            background-color: white;
+            margin-top: 24px;
+            width: 100%;
+            height: 49px;
+            border-bottom: 1px solid grey;
+        }
+        .fixbarin{
+            padding-right: 32px;
+            padding-left: 32px;
+            margin: 0 auto;
+            width: 640px;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .fixbarin a{
+            padding: 8px 16px;
+            font-size: 14px;
+            line-height: 30px;
+            color: black;
+            text-decoration: none;
+        }
+        .under{
+            border-bottom: orange 1px solid;
+        }
+        .centercontent{
+            margin: 0 auto;
+            padding-right: 32px;
+            padding-left: 32px;
+            width: 1280px;
+            height: 1016px;
+        }
+        .centerstart{
+            width: 1216px;
+            height: 1016px;
+            display: flex;
+            justify-content: space-between;
+        }
+        .centerleft{
+            margin-top: -32px;
+            width: 296px;
+        }
+        .centerleft img{
+            width: 296px;
+            height: 296px;
+            border-radius: 100%;
+            border: 1px solid gray;
+            display: inline-block;
+            margin-bottom: 20px;
+        }
+        .contentright input{
+            font-size: 15px;
+            border-radius: 5px;
+            border: 1px solid grey;
+            background-color:transparent;
+        }
+        .left-a{
+            display: flex;
+            flex-direction: column;
+            padding-bottom: 16px;
+        }
+        .left-b{
+            width: 296px;
+            height: 150px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .left-b a{
+            color: black;
+            text-decoration: none;
+        }
+        .centerleft input{
+            border-radius: 5px;
+            border: 1px solid gray;
+            background-color: gainsboro;
+            width: 296px;
+            height: 30px;
+        }
+        .centerright{
+            width: 896px;
+        }
+        .right-1{
+            height: 65px;
+            padding-top: 16px;
+            padding-bottom: 16px;
+        }
+        .right-1-1{
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: row;
+        }
+        .right-1-1-1{
+            width: 600px;
+            height: 100%;
+        }
+        .right-1-1-1 input{
+            border: 1px solid grey;
+            border-radius: 5px;
+            font-size: 15px;
+            padding: 5px 12px;
+            width: 100%;
+            height: 100%;
+        }
+        .right-1-1-2{
+            width: 296px;
+            height: 100%;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+        }
+        .right-1-1-2 a{
+            margin-left: 16px;
+            color: black;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 5px 16px;
+            border: 1px solid grey;
+            border-radius: 5px;
+            background-color: whitesmoke;
+        }
+        .right-2{
+            height: 951px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .right-2-1{
+            padding-left: 24px;
+            padding-top: 24px;
+            padding-bottom: 24px;
+            border-top: 1px solid grey;
+            height: 109px;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+        }
+        .right-2-1-1-title{
+            margin-right: 16px;
+            text-decoration: none;
+            color:dodgerblue;
+            font-size: 25px;
+        }
+        .right-2-1-1-next{
+            padding: 2px 2px;
+            border-radius: 7px;
+            border: 1px solid grey;
+            background-color: whitesmoke;
+            color: grey;
+        }
+        .right-2-1-2{
+            color: grey;
+        }
+        .rightend{
+            border-bottom: 1px solid grey;
+        }
+        footer{
+            margin: 0 auto;
+            width: 1280px;
+            height: 115px;
+        }
+        .footerwrap{
+            border-top: 1px solid grey;
+            padding-top: 40px;
+            margin-top: 40px;
+            padding-bottom: 8px;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .footerwrap ul{
+            list-style: none;
+            display: flex;
+            flex-direction: row;
+        }
+        .footerwrap ul li{
+            color: dodgerblue;
+            margin-right: 40px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div id="headstart">
+            <div class="headinner">
+                <div class="headsvg">
+                    <svg height="32" aria-hidden="true" viewBox="0 0 16 16" version="1.1" width="32" data-view-component="true" class="octicon octicon-mark-github">
+                        <path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path>
+                    </svg>
                 </div>
-                <div class="headright">
-                    <a class="headmulf"><input type="text" placeholder="Serch"></a>
-                    <a class="headmulf righttxt">Sign in</a>
-                    <a class="headmulf rightbtn righttxt">Sign up</a>
+                <div class="headcontent">
+                    <nav class="contentleft">
+                        <ul>
+                            <li>Why github?</li>
+                            <li>Team</li>
+                            <li>Enterpirse</li>
+                            <li>Explore</li>
+                            <li>Marketplace</li>
+                            <li>Pricing</li>
+                        </ul>
+                    </nav>
+                    <div class="contentright">
+                            <input class="contentinput" type="text" placeholder="Search">
+                            <a>Sign in</a>
+                            <a class="signup-a">Sign up</a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="content"></div>
-        <div class="foot">
-
+    </header>
+    <section>
+        <div class="fixbar">
+            <div class="fixbarin">
+                <a href="">Overview</a>
+                <a href="" class="under">Repositories</a>
+                <a href="">Projects</a>
+                <a href="">Packages</a>
+            </div>
         </div>
-    </body>
+        <div class="centercontent">
+            <div class="centerstart">
+                <div class="centerleft">
+                    <img src="https://avatars.githubusercontent.com/u/91244090?v=4" alt="">
+                    <div class="left-a">
+                        <a style="font-size: 28px; font-weight: bold;">JungWuk Yun</a>
+                        <a style="font-size: 20px; color: gray; font-weight: lighter;">wugawuga</a>
+                    </div>
+                    <div class="left-b">
+                        <input type="button" value="Follow">
+                        <a style="font-size: 15px;">안녕하세요 윤정욱입니다. 반갑습니다!</a>
+                        <a>3 followers · 5 following</a>
+                        <a href="https://velog.io/@wugawuga">https://velog.io/@wugawuga</a>
+                    </div>
+                </div>
+                <div class="centerright">
+                    <div class="right-1">
+                        <div class="right-1-1">
+                            <div class="right-1-1-1">
+                                <input type="text" placeholder="Find a repository...">
+                            </div>
+                            <div class="right-1-1-2">
+                                <a href="">Type</a>
+                                <a href="">Language</a>
+                                <a href="">Sort</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="right-2">
+                        <div class="right-2-1">
+                            <div class="right-2-1-1">
+                                <a class="right-2-1-1-title">sw_green_academy <a class="right-2-1-1-next">Public</a></a>
+                            </div>
+                            <div class="right-2-1-2">
+                                <a>HTML</a>
+                            </div>
+                        </div>
+                        <div class="right-2-1">
+                            <div class="right-2-1-1">
+                                <a class="right-2-1-1-title">sw_green_academy <a class="right-2-1-1-next">Public</a></a>
+                            </div>
+                            <div class="right-2-1-2">
+                                <a>HTML</a>
+                            </div>
+                        </div>
+                        <div class="right-2-1">
+                            <div class="right-2-1-1">
+                                <a class="right-2-1-1-title">sw_green_academy <a class="right-2-1-1-next">Public</a></a>
+                            </div>
+                            <div class="right-2-1-2">
+                                <a>HTML</a>
+                            </div>
+                        </div>
+                        <div class="right-2-1">
+                            <div class="right-2-1-1">
+                                <a class="right-2-1-1-title">sw_green_academy <a class="right-2-1-1-next">Public</a></a>
+                            </div>
+                            <div class="right-2-1-2">
+                                <a>HTML</a>
+                            </div>
+                        </div>
+                        <div class="right-2-1">
+                            <div class="right-2-1-1">
+                                <a class="right-2-1-1-title">sw_green_academy <a class="right-2-1-1-next">Public</a></a>
+                            </div>
+                            <div class="right-2-1-2">
+                                <a>HTML</a>
+                            </div>
+                        </div>
+                        <div class="right-2-1">
+                            <div class="right-2-1-1">
+                                <a class="right-2-1-1-title">sw_green_academy <a class="right-2-1-1-next">Public</a></a>
+                            </div>
+                            <div class="right-2-1-2">
+                                <a>HTML</a>
+                            </div>
+                        </div>
+                        <div class="right-2-1">
+                            <div class="right-2-1-1">
+                                <a class="right-2-1-1-title">sw_green_academy <a class="right-2-1-1-next">Public</a></a>
+                            </div>
+                            <div class="right-2-1-2">
+                                <a>HTML</a>
+                            </div>
+                        </div>
+                        <div class="right-2-1 rightend">
+                            <div class="right-2-1-1">
+                                <a class="right-2-1-1-title">sw_green_academy <a class="right-2-1-1-next">Public</a></a>
+                            </div>
+                            <div class="right-2-1-2">
+                                <a>HTML</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div class="footerwrap">
+            <ul>
+                <li style="color: grey;">© 2021 GitHub, Inc.</li>
+                <li>Terms</li>
+                <li>Privacy</li>
+                <li>Security</li>
+                <li>Status</li>
+                <li>Docs</li>
+            </ul>
+            <svg height="32" aria-hidden="true" viewBox="0 0 16 16" version="1.1" width="32" data-view-component="true" class="octicon octicon-mark-github">
+                <path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path>
+            </svg>
+            <ul>
+                <li>Contact Github</li>
+                <li>Pricing</li>
+                <li>Api</li>
+                <li>Training</li>
+                <li>Blog</li>
+                <li>About</li>
+            </ul>
+        </div>
+    </footer>
+</body>
 </html>
+
