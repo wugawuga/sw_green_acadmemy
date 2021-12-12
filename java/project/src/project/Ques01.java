@@ -49,6 +49,29 @@ public class Ques01 {
 
 	private static void selectGrade() { // 석차조회
 		
+		boolean rank = false;
+		Rloop:
+			while(!rank) {
+				System.out.print("이름을 입력하세요 나가시려면 n을 입력하세요 : ");
+				String rkname = scan.nextLine();
+				String no = "n";
+				for(int i = 0; i < names.length; i++) {
+					grade[i] = 1;
+					if(names[i].equals(rkname)) {
+						for(int j = 0; j < names.length; j++) {
+							if(average[i] < average[j]) {
+								grade[i]++;
+							}
+						}
+						System.out.println(names[i]+"의 석차는 "+grade[i]+"등 입니다.");
+						continue Rloop;
+					}
+				}
+				if(no.equals(rkname)) {
+		            return;
+		         }
+		        System.out.println("다시 입력하세요");
+			}
 	}
 
 	private static void selectScore() { // 성적조회
@@ -77,6 +100,7 @@ public class Ques01 {
 	}
 
 	private static void inputScore() { // 성적입력
+		
 		for(int i = 0; i < names.length; i++) {
 			int sum = 0;
 			System.out.print("이름을 입력하세요. : ");
@@ -86,7 +110,7 @@ public class Ques01 {
 				scores[i][j] = Integer.parseInt(scan.nextLine());
 				sum += scores[i][j];
 			}
-			average[i] = sum/scores[i].length;
+			average[i] = sum/3.0;
 		}
 	}
 
