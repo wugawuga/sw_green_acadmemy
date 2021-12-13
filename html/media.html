@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            box-sizing: border-box;
+        }
+        .box{
+            /* width: 100% */
+            width: 100vw;
+            height: 100vh;
+            background-color: firebrick;
+            font-size: 30px;
+            font-weight: 800;
+            color: white;
+            text-align: center;
+            line-height: 100vh;
+        }
+        .box:after{
+            content: "Mobile";
+        }
+        @media screen and (min-width:576px){
+            .box{
+                background-color: orange;
+            }
+            .box:after{
+                content: "Landscape Phone";
+            }
+        }
+        @media screen and (min-width:768px) {
+            .box{
+                background-color: yellow;
+            }
+            .box:after{
+                content: "tablet Phone";
+            }
+        }
+        @media screen and (min-width:992px) {
+            .box{
+                background-color: green;
+            }
+            .box:after{
+                content: "desktop";
+            }
+        }
+        @media screen and (min-width:1200px) {
+            .box{
+                background-color: blue;
+            }
+            .box:after{
+                content: "Large desktop";
+            }
+        }
+        @media screen and (min-width:1366px) {
+            .box{
+                background-color: blueviolet;
+            }
+            .box:after{
+                content: "Super desktop";
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+</body>
+</html>
