@@ -24,3 +24,7 @@
   * github clone 완성
 * 21-12-12
   * java 문제 해결 완료
+* 21-12-13
+  * @media
+  * animation
+  * grid
