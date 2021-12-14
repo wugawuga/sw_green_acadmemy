@@ -29,3 +29,6 @@
   * animation
   * grid
   * java 알고리즘 연습
+* 21-12-14
+  * java 알고리즘 연습
+  * javaScript 기본 문법
