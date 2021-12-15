@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function updown(){
+            alert("up down start!!!");
+            let run = true;
+            let ran = Math.floor(Math.random()*100+1);
+            let ctt = 0;
+            Loop:
+                while(run){
+                    let n = parseInt(prompt("1~100을 맞추세요"));
+                    if(n > ran){
+                        alert("down!!");
+                        ctt++;
+                        continue Loop;
+                    }else if(n < ran){
+                        alert("up!!");
+                        ctt++;
+                        continue Loop;
+                    }   
+                    alert("nice!! "+ctt+"번에 성공!!");
+                    
+                    run = confirm("다시 할 거에여?");
+                }
+            
+        }
+    </script>
+    <button type="button" onclick="updown()">자자 랜덤 게임시작</button>
+    <script>
+        function updowncom(){
+            alert("up down start!!!");
+            let run = true;
+            let ctt = 0;
+            let min, max;
+            min = Number(prompt("최소"));
+            max = Number(prompt("최대"));
+            let ran = prompt("com이 맞출 숫자");
+            Loop:
+                while(run){
+                    let n = Math.floor(Math.random()*(max-min+1)+min);
+                    if(n > ran){
+                        alert("down!!");
+                        ctt++;
+                        continue Loop;
+                    }else if(n < ran){
+                        alert("up!!");
+                        ctt++;
+                        continue Loop;
+                    }   
+                    alert("nice!! "+ctt+"번에 성공!!");
+                    
+                    run = confirm("다시 할 거에여?");
+                }
+            
+        }
+    </script>
+    <button type="button" onclick="updowncom()">컴퓨터가 맞춰보겠어</button>
+</body>
+</html>
