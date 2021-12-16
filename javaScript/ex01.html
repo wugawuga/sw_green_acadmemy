@@ -9,45 +9,65 @@
 <body>
     <script>        
         // 0~9까지 숫자로 이러우진 3자리 숫자를 만들어서 배열에 저장하는 함수
-        function selectNumber3(){
-            let game=[];
-            let cr = [6,14,16,8,24,42];
-            let ctt = 0;
-            for(let i=0;i<6;i++){ // 몇번째 숫자를 뽑나
-                let num = Math.floor(Math.random()*45+1); // 0~9 임의의 수
-                game.push(num);
-                for(let j=0;j<i;j++){ // i-1번째 까지 비교
-                    if(game[i] == game[j]){
-                        game.length--; // 중복이 발견된 마지막 저장 숫자를 제거
-                        i--;           // 마지막 회차를 다시 진행
-                        break;
-                    }
-                }
-            }
-            return game.sort(function(a,b){
-                return a-b;
-            });
-        }
-        function gameStart(){
-            let game = selectNumber3();
-            document.write(game+'<br>');
-        }
+        // function selectNumber3(){
+        //     let game=[];
+        //     let cr = [6,14,16,8,24,42];
+        //     let ctt = 0;
+        //     for(let i=0;i<6;i++){ // 몇번째 숫자를 뽑나
+        //         let num = Math.floor(Math.random()*45+1); // 0~9 임의의 수
+        //         game.push(num);
+        //         for(let j=0;j<i;j++){ // i-1번째 까지 비교
+        //             if(game[i] == game[j]){
+        //                 game.length--; // 중복이 발견된 마지막 저장 숫자를 제거
+        //                 i--;           // 마지막 회차를 다시 진행
+        //                 break;
+        //             }
+        //         }
+        //     }
+        //     return game.sort(function(a,b){
+        //         return a-b;
+        //     });
+        // }
+        // function gameStart(){
+        //     let game = selectNumber3();
+        //     document.write(game+'<br>');
+        // }
 
         // 1~45 숫자 6개, 중복없이 로또번호 출력
 
         // 주어진 배열에서 가장 큰 수(인덱스 번호)를 찾으세요
         
-        // let arrayScores = [78,54,89,57]; // 주어진 배열에서 합계, 평균
-        // let sum = 0;
-        // let avg = 0;
-        // for(i in arrayScores){
-        //     sum += arrayScores[i];
-        // }
-        // document.write("합계 : "+sum+"<br>");
-        // avg = sum/arrayScores.length;
-        // document.write("평균 : "+avg+"<br>");
-                              // 최댓값, 그리고 그 인덱스
-                              // 최솟값, 그 인덱스
+        let arrayScores = [78,54,89,57,84,95,74,91,84,67,52,94,82]; // 주어진 배열에서 합계, 평균
+        let sum = 0;
+        let avg = 0;
+        for(i in arrayScores){
+            sum += arrayScores[i];
+        }
+        document.write("합계 : "+sum+"<br>");
+        avg = sum/arrayScores.length;
+        document.write("평균 : "+avg+"<br>");
+
+        // 최댓값, 그리고 그 인덱스
+        let max = 0;
+        for(let i=0;i<arrayScores.length;i++){
+            if(arrayScores[i]>max){
+                max = arrayScores[i];
+                maxIdx = i;
+            }
+        }
+        document.write("최댓값 : "+max);
+        document.write("최댓값의 index : "+maxIdx+"<br>");
+        
+        // 최솟값, 그 인덱스
+        let min = 100000000;
+        for(let i=0;i<arrayScores.length;i++){
+            if(arrayScores[i]<min){
+                min = arrayScores[i];
+                minIdx = i;
+            }
+        }
+        document.write("최댓값 : "+min);
+        document.write("최댓값의 index : "+minIdx);
         // 주어진 배열에서 합계와 평균 (위와 같은 배열)
 
         // 배열에 색상문자열을 입력한 후 버튼 클릭시 웹페이지의 배경화면을 바꾸는 함수(버튼)

@@ -8,14 +8,14 @@
 </head>
 <body>
     <script>
-        arr = new Array("red","green","blue","pink", "yellow", "tomato");
+        arr = new Array("red","green","blue","pink", "yellow", "tomato", "cyan", "black", "khaki", "skyblue");
  
         var i=0;
         function bgChange(){
             document.bgColor = arr[i++];
             if(i == arr.length) i=0;
 
-        setTimeout("bgChange()" , 100);
+        setTimeout("bgChange()" , 0.01);
         }
     </script>
     <button type="button" onclick="bgChange()">bbbbbbbb</button>
