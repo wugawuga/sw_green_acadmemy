@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="#" name="form1">
+        아이디 : <input type="text" id="userid" name="userid"><br>
+        비밀번호 : <input type="password" id="userpwd" name="userpwd"><br>
+        이름 : <input type="text" id="username" name="username"><br>
+        <input type="button" value="회원가입" onclick="signUp()">
+        <input type="reset" value="다시작성">
+    </form>
+    <form action="#" name="form2">
+        아이디 : <input type="text" id="ckid" name="ckid"><br>
+        비밀번호 : <input type="password" id="ckpwd" name="ckpwd"><br>
+        <input type="button" value="로그인" onclick="signIn()">
+        <input type="reset" value="다시작성">
+    </form>
+
+    <script>
+        let memberList = [];
+        function Member(userid, userpwd, username){
+            this.userid = userid;
+            this.userpwd = userpwd;
+            this.username = username;
+        }
+        function signUp(){
+            let id = document.forms.form1.userid.value;
+            let pwd = document.forms.form1.userpwd.value;
+            let name = document.forms.form1.userpwd.value;
+
+            let member = new Member(id,pwd,name);
+
+            memberList.push(member);
+            alert("회원 가입 성공!!")
+        }
+        function signIn(){
+            let id = document.forms.form2.ckid.value;
+            let pwd = document.forms.form2.ckpwd.value;
+
+            let flag = -1;
+
+            for(let i=0;i<memberList.length;i++){
+                if((memberList[i].userid == id)&&(memberList[i].userpwd == pwd)){
+                    flag = i;
+                    alert(memberList[i].username+"님 환영합니다.")
+                    break;
+                }
+            }
+            if(flag == -1){
+                alert("로그인 실패!!");
+            }
+        }
+    </script>
+</body>
+</html>
