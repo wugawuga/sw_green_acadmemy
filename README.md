@@ -34,3 +34,6 @@
   * javaScript 기본 문법
 * 21-12-15
   * javaScript 문제
+* 21-12-16
+  * javaScript 배열 수정
+  * javaScript 구구단, 로그인
