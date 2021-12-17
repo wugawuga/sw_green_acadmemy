@@ -37,3 +37,9 @@
 * 21-12-16
   * javaScript 배열 수정
   * javaScript 구구단, 로그인
+* 21-12-17
+  * java 보강
+  * 메서드
+  * 클래스(Controller)
+  * 상속과 구현
+  * 싱글톤 패턴
