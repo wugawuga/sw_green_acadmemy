@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>영단어장</h2>
+    <input type="button" value="단어 추가" onclick="addword()">
+    <input type="button" value="마지막 단어 삭제" onclick="lastRemoveWord()">
+    <input type="button" value="번호로 단어 삭제" onclick="numRemoveWord()">
+    <input type="button" value="단어로 단어 삭제" onclick="danRemoveWord()">
+    <!-- 
+        <p> apple : 사과 </p>
+        <p> banana : 바나나 </p>
+     -->
+    <script>
+        function danRemoveWord(){
+            // 힌트 : "apple : 사과" => 어떻게 apple을 꺼낼것인가??
+            // 확실한 힌트 : String 객체에 split()메서드
+        }
+        function numRemoveWord(){
+            
+            let p = document.getElementById('p');
+            if(!p[0]){
+                alert('삭제할 대상이 없어요');
+            }else{
+                let numRemoveWord = prompt('삭제할 번호를 입력하세요');
+                if(numRemoveWord<=0||p.length<numRemoveWord){
+                    alert('없는 번호를 입력했어요 다시 확인해 주세요');
+                }else{
+                    p[numRemoveWord-1].remove();
+                }
+            }
+
+        }
+        function lastRemoveWord(){
+            let p = document.getElementsByTagName('p');
+
+            if(!p[0]){
+                alert('삭제할 대상이 없어요');
+            }else{
+                p[p.length-1].remove();
+
+            }
+        }
+
+        function addword(){
+            
+            // 번호 매기기
+            let plist = document.getElementsByTagName('p');
+            let num = plist.length;
+
+            let engword = prompt('영어단어를 입력해요');
+            let korword = prompt('한글 뜻을 입력해요');
+
+            let p = document.createElement('p');
+            
+            p.innerHTML = num+". "+engword+" : "+korword;
+            document.body.appendChild(p);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>영단어장</h2><br>
+    영어 : <input type="text" id="eng">
+    뜻 : <input type="text" id="kor">
+    <input type="button" value="작성하기!!" id="danbtn" onclick="www()">
+    <p id="dan">외워외워</p><br>
+    
+    
+    <script>
+        window.onload = function(){
+            let eng = document.getElementById('eng');
+            let kor = document.getElementById('kor');
+            let danbtn = document.getElementById('danbtn');
+
+            danbtn.addEventListener('click',function adddan(e){
+                document.addEventListener('click',www,false);
+                e.stopPropagation();
+            },true);
+
+            function www(){
+                let dan = document.getElementById('dan');
+
+                dan.innerHTML += '<br>'+eng+" : "+kor;
+            }
+        }
+    </script>
+</body>
+</html>

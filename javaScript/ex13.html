@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            box-sizing: border-box;
+        }
+        .vbox{
+            display: inline-block;
+            position: absolute;
+            padding: 10px;
+            background-color: blue;
+            color: white;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h2>박스 옮기기</h2>
+
+    <script>
+        window.onload = function(){
+            let box = document.createElement('div');
+            box.classList.add('vbox');
+            box.innerHTML = "나를 옮겨";
+
+            let boxoffsetX, boxoffsetY;
+
+            document.body.appendChild(box);
+
+            box.addEventListener('mousedown',function mouseDownListener(e){
+                document.addEventListener('mousemove',mouseMoveListener,false);
+                boxoffsetX = e.offsetX; boxoffsetY = e.offsetY;
+            },false);
+
+            document.addEventListener('mouseup',function mouseUpListener(e){
+                document.removeEventListener('mousemove',mouseMoveListener,false);
+            },false);
+
+            function mouseMoveListener(e){
+
+                box.style.left = e.pageX - boxoffsetX + "px";
+                box.style.top = e.pageY - boxoffsetY + "px";
+
+                console.log("e.pageX : "+e.pageX);
+                console.log("e.pageY : "+e.pageY);
+                console.log("boxOffsetX : "+boxoffsetX);
+                console.log("boxOffsetY : "+boxoffsetY);
+            }
+        };
+    </script>
+</body>
+</html>

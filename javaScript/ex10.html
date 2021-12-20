@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>폼에서 데이터 읽어오거나 채워 넣기</h2>
+
+    <form action="#" name="frm1">
+        이름:  <input type="text" name="username" id="username"><br>
+        취미 : <br>
+        <input type="checkbox" name="movie" id="movie" value="movie">영화감상<br>
+        <input type="checkbox" name="game" id="game" value="game">게임<br>
+        <input type="checkbox" name="baker" id="baker" value="baker">제빵<br>
+        성별 : <br>
+        <input type="radio" name="gender" id="male" value="male">남
+        <input type="radio" name="gender" id="female" value="female">여<br>
+        직업 : <br>
+        <select name="job" id="job">
+            <option value="front">프론트 엔드 개발자</option>
+            <option value="back">백엔드 개발자</option>
+            <option value="full">풀스텍 개발자</option>
+        </select><br>
+        포부 : <br>
+        <textarea name="hope" id="hope" cols="30" rows="10"></textarea><br>
+        <input type="button" value="채우기" onclick="fill()">
+        <input type="submit" value="제출" onclick="return ok()">
+    </form>
+    <script>
+        function fill(){ // 미리 준비된 값으로 채우기
+            let frm = document.forms.frm1;
+
+            frm.username.value = '우가우가';
+            frm.movie.checked = true;
+            frm.baker.checked = true;
+            frm.male.checked = true;
+            frm.job.selectedIndex = 2;
+            frm.hope.value = '방강방가';
+        }
+
+        function ok(){ // 폼에 채워진 데이터를 읽어와서 console에 출력하도록 하는 함수
+            
+            let frm = document.forms.frm1;
+
+            // 이름에 입력된 값 읽어오기
+            let name = frm.username.value; // name = 'username'인 input요소로 입력받은 값
+
+            // 취미에 입력된 값 읽어오기 >> 체크박스는 여러개 >> 배열쓰기
+            let hobby = [];
+            if(frm.movie.checked){
+                hobby.push(frm.movie.value);
+            }
+            if(frm.game.checked){
+                hobby.push(frm.game.value);
+            }
+            if(frm.baker.checked){
+                hobby.push(frm.baker.value);
+            }
+
+            // 성별에 입력된 값 읽어오기
+            let gender;
+            if(frm.male.checked){
+                gender = frm.male.value;
+            }else if(frm.female.checked){
+                gender = frm.female.value;
+            }else{
+                gender = null;
+            }
+
+            // 직업 읽어오기
+            let job = frm.job.value;
+
+            // 포부 읽어오기
+            let hope = frm.hope.value;
+
+            console.log("이름 : "+name);
+            console.log("취미 : "+hobby);
+            console.log("성별 : "+gender);
+            console.log("포부 : "+hope);
+
+            return false;
+        }
+    </script>
+</body>
+</html>
