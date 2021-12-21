@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    *{
+        margin:0 auto;
+        box-sizing: border-box;
+    }
+    fieldset{
+        width : 500px;
+    }
+    ul{
+        border : 1px solid black;
+        width : 500px;
+    }
+</style>
+<body>
+    <fieldset>
+        <legend>To - Do List</legend>
+        오늘의 할 일 : <input type="text" id="todo">
+        <button type="submit" id="regiBtn" onclick="registList()">등록</button>
+        
+    </fieldset>
+    <ul id="todoList">
+            
+    </ul>
+
+    <script>
+        let ul = document.getElementById('todoList');
+        let listNum = 0;
+
+        function registList(){
+            let li = document.createElement('li');
+            
+            li.id = "list"+listNum;
+
+            let todo = document.getElementById('todo');
+            let deleteButton = "<button type=\"button\" id=\"del"+listNum+"\"value=\""+listNum+"\" onclick=\"deleteList(this.value)\">삭제</button>";
+
+            //console.log(listNum);
+            li.innerHTML = "<input type=\"checkbox\" id=\"ck"+listNum+"\"value=\""+listNum+"\" onclick=\"underLine(this.value)\">" 
+                         + todo.value
+                         + deleteButton; // 자신의 값을 넘길수 있음. this.value
+
+            ul.appendChild(li);
+            
+            todo.value=""; // 버튼클릭시 텍스트박스 초기화
+            
+            listNum++;
+        }
+
+        function underLine(listNum){
+            
+            let li_n = document.getElementById('list'+listNum);
+            let checkbox_n = document.getElementById('ck'+listNum);
+
+            if(checkbox_n.checked == true){ // 체크되면 줄긋기
+                li_n.style.textDecoration = 'line-through';
+                
+            }else{ // 체크안되어있으면 줄없음 
+                li_n.style.textDecoration = 'none';
+            }
+        }
+
+        function deleteList(delNum){
+            let del_li_n = document.getElementById('list'+delNum);
+
+            //console.log(del_li_n);
+            del_li_n.remove();
+        }
+    </script>
+
+    
+</body>
+</html>
