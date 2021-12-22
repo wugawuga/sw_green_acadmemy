@@ -46,9 +46,16 @@
     <input type="month" id="cal">
     <button type="button" onclick="makeCalendar()"> 달력 만들기</button>
 </fieldset>
+<div id="caldiv"></div>
     <script>
         function makeCalendar(){
-            
+            let div = document.getElementById('caldiv');
+            div.remove();
+            div = document.createElement('div');
+            let body = document.getElementById('calendarbody');
+            body.appendChild(div);
+            div.setAttribute('id','caldiv');
+
             let yearMonth = document.getElementById('cal').value.split('-');
             let inputYear = yearMonth[0];
             let selectMonth = yearMonth[1]-1;
@@ -67,7 +74,7 @@
 
             let yoil = ['일', '월', '화', '수', '목', '금', '토'];
 
-            let body = document.getElementById('calendarbody');
+             div = document.getElementById('caldiv');
             let table = document.createElement('table');
             let tr = document.createElement('tr');
             let td = document.createElement('td');
@@ -76,7 +83,7 @@
             td.id = "yearMonth"
             td.innerHTML = year + " 년 " + (month+1) + "월";
 
-            body.appendChild(table);
+            div.appendChild(table);
             table.appendChild(tr);
             tr.appendChild(td);
 
@@ -127,8 +134,6 @@
                     tr.appendChild(td);
                 }
             }//if
-
-            
         }
     </script>
     
