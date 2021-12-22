@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin:0 auto;
+            box-sizing: border-box;
+            text-align: center;
+        }
+        table{
+            border:1px solid black;
+            text-align: center;
+            width: 500px;
+            height: 500px;
+        }
+        td{
+            border:1px solid black;
+        }
+        fieldset{
+            width: 500px;
+        }
+        #yearMonth{
+            color : black; 
+            font-weight: bold;
+        }
+        td:nth-child(1){
+            color : red;
+        }
+        td:nth-child(7){
+            color : blue;
+        }
+        tr:nth-child(2){
+            font-weight: bold;
+        }
+        
+    </style>
+</head>
+<body id="calendarbody">
+    
+<fieldset>
+    <legend>달력만들기</legend>
+    <input type="month" id="cal">
+    <button type="button" onclick="makeCalendar()"> 달력 만들기</button>
+</fieldset>
+    <script>
+        function makeCalendar(){
+            
+            let yearMonth = document.getElementById('cal').value.split('-');
+            let inputYear = yearMonth[0];
+            let selectMonth = yearMonth[1]-1;
+
+            let today = new Date(inputYear, selectMonth);
+
+            let year = today.getFullYear();
+            let month = today.getMonth();
+            
+            // firstDate -> 첫날, 무조건 1
+            // lastDate -> 다음달 -1일이면 이번달 마지막날 
+            // firstDay -> 요일 0일 1월 2화 3수 4목 5금 6토 0~6 일~토
+            let firstDate = new Date(year,month,1).getDate();
+            let lastDate = new Date(year, month+1, 0).getDate();
+            let firstDay = new Date(year,month,1).getDay();
+
+            let yoil = ['일', '월', '화', '수', '목', '금', '토'];
+
+            let body = document.getElementById('calendarbody');
+            let table = document.createElement('table');
+            let tr = document.createElement('tr');
+            let td = document.createElement('td');
+
+            td.colSpan = "7";
+            td.id = "yearMonth"
+            td.innerHTML = year + " 년 " + (month+1) + "월";
+
+            body.appendChild(table);
+            table.appendChild(tr);
+            tr.appendChild(td);
+
+            tr = document.createElement('tr');
+            table.appendChild(tr);
+
+            //일월화수목금토 셋팅
+            for(i=0; i<7; i++){
+                td = document.createElement('td');
+                tr.appendChild(td);
+                
+                td.innerHTML = yoil[i];
+            }
+
+            // 달력만들기 
+            let start = 0;
+            for(i=0; i<parseInt(lastDate); i++){
+                
+                //첫줄이면 
+                if(start == 0){
+                    tr = document.createElement('tr');
+                    table.appendChild(tr);
+                    // 첫날 나오기전까지 빈칸채우기
+                    for(j=0; j<parseInt(firstDay); j++){
+                        td = document.createElement('td');
+                        tr.appendChild(td);
+                    }
+                    // 첫줄 끝났다는 신호
+                    start++
+                }//if
+                
+                td = document.createElement('td');
+                tr.appendChild(td);
+                td.innerHTML = i+1;
+
+                firstDay++;
+
+                if((firstDay%7 == 0)){
+                    tr = document.createElement('tr');
+                    table.appendChild(tr);
+                }
+            }//for
+
+            // 마지막일 이후로 빈칸 td 만들기
+            if(7-(firstDay)%7 != 7){
+                for(i=0; i<7-((firstDay)%7); i++){
+                    td = document.createElement('td');
+                    tr.appendChild(td);
+                }
+            }//if
+
+            
+        }
+    </script>
+    
+</body>
+</html>
