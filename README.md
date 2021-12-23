@@ -48,3 +48,6 @@
 * 21-12-23
   * javaScript 달력
   * javaScript 단어장
+* 21-12-23
+  * javaScript 스토리지
+  * JSON 형식
