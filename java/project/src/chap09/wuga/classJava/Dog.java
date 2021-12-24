@@ -1,11 +1,11 @@
-package chap02.green.class704;
+package chap09.wuga.classJava;
 
-import chap02.green.admin.Animal;
+import chap09.wuga.admin.Animal;
 
 public class Dog extends Animal{
 	
 	
-	public void check() {// 부모 클래스가 가진 자식 클래스가 사용 가능한가??
+	public void check() {// 부모 클래스가 가진 것들을 자식 클래스가 사용 가능한가??
 		
 		// 부모클래스와 자식클래스간에 패키지가 다르므로 default 사용불가
 		// 상속관계로 묶여있으므로 protected는 사용가능!!

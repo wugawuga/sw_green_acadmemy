@@ -1,4 +1,4 @@
-package chap02.green.main;
+package chap09.wuga.main;
 
 public class Main02 {
 
@@ -6,7 +6,7 @@ public class Main02 {
 		
 		// 같은 패키지의 인스턴스 내 멤버 호출 private만 제외하고 멤버 호출 가능
 		
-		chap02.green.main.Member m1 = new chap02.green.main.Member();
+		Member m1 = new Member();
 		
 		System.out.println("public field1 : "+m1.field1);
 		System.out.println("default field2 : "+m1.field2);
@@ -18,7 +18,7 @@ public class Main02 {
 		
 		//-----------------------------------------
 			// 다른 패키지의 인스턴스 내 멤버 호출 public만 멤버 호출 가능
-		chap02.green.admin.Member m2 = new chap02.green.admin.Member();
+		chap09.wuga.admin.Member m2 = new chap09.wuga.admin.Member();
 		
 		System.out.println("public field1 : "+m2.field1);
 		System.out.println("default field2 : "+m2.field2);

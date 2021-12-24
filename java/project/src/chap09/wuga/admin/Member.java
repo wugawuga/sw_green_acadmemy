@@ -1,4 +1,4 @@
-package chap02.green.admin;
+package chap09.wuga.admin;
 
 public class Member {
 	
