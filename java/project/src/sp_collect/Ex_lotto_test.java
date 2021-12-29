@@ -9,7 +9,7 @@ public class Ex_lotto_test {
 		
 		Set<Integer> lotto = new HashSet<>();
 		
-		for(int i=0;lotto.size()<6;i++) {
+		for(;lotto.size()<6;) {
 			int lonum = (int)(Math.random()*45+1);
 			
 			lotto.add(lonum);
