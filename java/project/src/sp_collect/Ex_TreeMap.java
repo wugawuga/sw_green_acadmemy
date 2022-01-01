@@ -40,7 +40,6 @@ public class Ex_TreeMap {
 			Map.Entry<Integer, String> entry = entryItr.next();
 			System.out.println("번호 : "+entry.getKey()+", 이름 : "+entry.getValue());
 		}
-		
 	}
 
 }
